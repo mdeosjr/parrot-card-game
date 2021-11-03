@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.principal {
+    width: 100%;
+    height: 660px;
+    background-color: #EEF9BF;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 56px;
+    line-height: 66px;
+    letter-spacing: -0.004em;
+    text-align: center;
+
+    color: #75B79E;
+    
+    padding: 40px;
+}
+
+.cartas {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.carta {
+    width: 117px;
+    height: 146px;
+
+    background: #A7E9AF;
+    border: 1px solid #99CEA8;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.imagem {
+    background-image: url(../assets/front.png);
+    background-position: center;
+    background-size: cover;
+    
+    width: 100px;
+    height: 100px;
+}
