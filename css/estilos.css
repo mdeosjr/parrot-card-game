@@ -37,16 +37,39 @@ h1 {
 .carta {
     width: 117px;
     height: 146px;
+    position: relative;
+  }
 
-    background: #A7E9AF;
-    border: 1px solid #99CEA8;
-    border-radius: 5px;
-
+.face {
+    width: 100%;
+    height: 100%;
+   
+    background-color: #A7E9AF;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin: 15px;
-}
+    justify-content: center;
+    
+    position: absolute;
+    
+    backface-visibility: hidden;
+    transition: all .5s;
+    transform-style: preserve-3d;
+  }
+
+.carta-verso {
+    transform: rotateY(180deg);
+  }
+
+.carta:hover .carta-verso {
+    transform: rotateY(0deg);
+  }
+
+.carta:hover .carta-frente {
+    transform: rotateY(-180deg);
+  }
 
 .imagem {
     background-image: url(../assets/front.png);
@@ -55,4 +78,20 @@ h1 {
     
     width: 100px;
     height: 100px;
+}
+
+@media (max-width: 335px) {
+    
+    h1 {
+        font-size: 36px;
+        line-height: 42px;
+    }
+    
+    .cartas {
+        width: 100%;
+        height: 100%;
+       
+        flex-direction: column;
+        align-items: center;
+    }
 }
