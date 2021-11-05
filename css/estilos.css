@@ -8,7 +8,6 @@ body {
 
 .principal {
     width: 100%;
-    height: 660px;
     background-color: #EEF9BF;
 
     display: flex;
@@ -63,11 +62,11 @@ h1 {
     transform: rotateY(180deg);
   }
 
-.carta:hover .carta-verso {
+.carta:active .carta-verso {
     transform: rotateY(0deg);
   }
 
-.carta:hover .carta-frente {
+.carta:active .carta-frente {
     transform: rotateY(-180deg);
   }
 
@@ -81,10 +80,16 @@ h1 {
 }
 
 @media (max-width: 335px) {
+    .principal {
+        width: 100%;
+    }
     
     h1 {
         font-size: 36px;
         line-height: 42px;
+
+        width: 100%;
+        padding: 0 auto; 
     }
     
     .cartas {
