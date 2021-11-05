@@ -29,13 +29,20 @@ h1 {
 }
 
 .cartas {
+    height: 600px;      
+    width: 1200px;
+
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    /* align-items: center; */
 }
 
 .carta {
     width: 117px;
     height: 146px;
+    margin: 17px;
+
     position: relative;
   }
 
@@ -64,6 +71,11 @@ h1 {
 
 .carta:active .carta-verso {
     transform: rotateY(0deg);
+  }
+
+  .carta-verso img {
+      height: 100px;
+      width: 100px;
   }
 
 .carta:active .carta-frente {
