@@ -13,10 +13,9 @@ let carta1 = null;
 let carta2 = null;
 let cartaEscolhida = 0;
 let qteJogadas = 0;
-const qteTotal = document.querySelectorAll(".carta-Selecionada").length;
 
 while (numeroDeCartas < 4 || numeroDeCartas > 14 || numeroDeCartas % 2 !== 0) {
-    numeroDeCartas = prompt("Qual é o número desejado de cartas?")
+    numeroDeCartas = parseInt(prompt("Qual é o número desejado de cartas?"))
 } 
 
 lancarCartas ();
@@ -32,14 +31,6 @@ function embaralhando () {
 function lancarCartas () {
     embaralhando()
     let cartas = document.querySelector(".cartas")
-
-    if (numeroDeCartas === 8) {
-        cartas.style.width = "700px"
-    } else if (numeroDeCartas === 10) {
-        cartas.style.width = "800px"
-    } else if (numeroDeCartas === 14) {
-        cartas.style.width = "1100px"
-    }
 
     for (let i = 0; i < (numeroDeCartas/2); i++) {
         cartasSorteadas.push(nomeCartas[i]);
@@ -84,7 +75,7 @@ function cartaVirada (carta) {
             cartaEscolhida = 0;
         }
     }
-    finalizar();
+    setTimeout (finalizar, 1000)
 }
 
 function delay () {
@@ -92,8 +83,12 @@ function delay () {
     carta2.classList.remove("carta-Selecionada");
 }
 
+let qteTotal 
+
 function finalizar () {
+    qteTotal = document.querySelectorAll(".carta-Selecionada").length;
+
     if (qteTotal === numeroDeCartas) {
-        alert("Você venceu");
+        alert(`Você venceu em ${qteJogadas} jogadas!`);
     }
 }
